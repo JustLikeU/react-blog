@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 
+// import {
+//   PageWrap,
+// } from '.style';
+
+import Banner from '../../common/banner';
+
 class Home extends Component {
   render() {
     return (
-      <div>
-        主页
-      </div>
+      <section>
+        <Banner></Banner>
+      </section>
     );
   }
 };

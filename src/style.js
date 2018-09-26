@@ -27,7 +27,9 @@ injectGlobal`
 		display: block;
 	}
 	body {
+		min-width: 1200px;
     font-size: 14px;
+		color: #333;
 	}
 	ol, ul {
 		list-style: none;

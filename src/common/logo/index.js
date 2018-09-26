@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from './store';
+import { LogoWrap } from './style';
 
 const data = {
   width: 85,
@@ -46,43 +47,40 @@ const data = {
     '#ffffb3', '#e6f5b0', '#ccebc5', '#b3e2d8', '#b3d7dd', '#b3cde3', '#C09EB3',
     '#cab2d6', '#e3add5'
   ],
-  // lastTime: 0,
 }
 
 class Logo extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      lastTime: 0,
-    }
+    this.drawInit = this.drawInit.bind(this);
   }
   render() {
     return (
-      <canvas
-        ref='canvas'
-        width={data.width * 2}
-        height={data.height * 2}
-        style={{ width: data.width, height: data.height }}>
-      </canvas>
+      <LogoWrap>
+        <canvas
+          ref='canvas'
+          width={data.width * 2}
+          height={data.height * 2}
+          style={{ width: data.width, height: data.height }}>
+        </canvas>
+      </LogoWrap>
     );
   }
   componentDidMount() {
-    this.drawAll();
-    window.requestAnimationFrame(this.drawInit.bind(this));
+    this.drawInit();
   }
   drawInit(timestamp) {
     const {
       startTime,
-      duringTime,
+      intervalTime,
       changeStartTime,
     } = this.props;
     let progressTime = timestamp - startTime;
-    console.log(progressTime, timestamp, startTime)
-    if (progressTime > duringTime) {
+    if (progressTime > intervalTime) {
       this.drawAll();
       changeStartTime(timestamp);
-      window.requestAnimationFrame(this.drawInit.bind(this));
     }
+    window.requestAnimationFrame(this.drawInit);
   }
   drawAll() {
     this.drawReact(data.x, 0);
@@ -106,7 +104,7 @@ class Logo extends Component {
 const mapState = (state) => {
   return {
     startTime: state.getIn(['logo', 'startTime']),
-    duringTime: state.getIn(['logo', 'duringTime']),
+    intervalTime: state.getIn(['logo', 'intervalTime']),
   }
 };
 

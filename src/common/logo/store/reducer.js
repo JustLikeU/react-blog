@@ -3,7 +3,7 @@ import { fromJS } from 'immutable';
 
 const defaultState = fromJS({
   startTime: 0,
-  duringTime: 500,
+  intervalTime: 500,
 });
 
 export default (state = defaultState, action) => {
@@ -12,5 +12,5 @@ export default (state = defaultState, action) => {
 			return state.set('startTime', action.time);
 		default:
 			return state;
-	};
+	}
 };
