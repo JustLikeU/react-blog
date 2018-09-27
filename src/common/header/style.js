@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const HeaderWrap = styled.header`
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  z-index: 2;
 `;
 
 export const HeraderInner = styled.div`
