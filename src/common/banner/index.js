@@ -8,8 +8,10 @@ import {
   BoyWrap,
   GirlWrap,
   CatWrap,
+  ScorpioWrap,
 } from './style';
 
+import Scorpio from '../scorpio';
 import BannerBg from '../../static/image/index-bg.png';
 import BoyImg from '../../static/image/boy.png';
 import GirlImg from '../../static/image/girl.png';
@@ -24,6 +26,9 @@ class Banner extends Component {
       <BannerWrap>
         <img src={BannerBg} alt='banner-bg' />
         <BannerInner>
+          <ScorpioWrap>
+            <Scorpio></Scorpio>
+          </ScorpioWrap>
           <TitleWrap>Hello, I'm Wengang Xiong!</TitleWrap>
           <BannerMain>
             <BoyWrap>

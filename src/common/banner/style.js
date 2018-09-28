@@ -6,7 +6,6 @@ const designSize = 1920;
 // 实际尺寸
 const actualSize = window.innerWidth > 1200 ? window.innerWidth : 1200;
 const scale = actualSize / designSize;
-console.log(scale)
 
 export const BannerWrap = styled.section`
   position: relative;
@@ -134,4 +133,10 @@ export const CatWrap = styled.div`
     width:  ${123 * scale}px;
     height: ${144 * scale}px;
   }
+`;
+
+export const ScorpioWrap = styled.div`
+  position: absolute;
+  left: ${160 * scale}px;
+  top: ${60 * scale}px;
 `;
