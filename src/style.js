@@ -30,6 +30,7 @@ injectGlobal`
 	body {
 		min-width: 1200px;
     font-size: 14px;
+		background-color: #f5f5f5;
 		color: #333;
 	}
 	ol, ul {

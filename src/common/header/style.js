@@ -12,7 +12,7 @@ export const HeaderWrap = styled.header`
 
 export const HeraderInner = styled.div`
   position: relative;
-  width: 1200px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

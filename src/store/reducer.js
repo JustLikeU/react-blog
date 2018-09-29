@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux-immutable';
 
 import { reducer as logoReducer } from '../common/logo/store';
+import { reducer as homeReducer } from '../page/home/store';
 
 const reducer = combineReducers({
 	logo: logoReducer,
+	home: homeReducer,
 });
 
 export default reducer;

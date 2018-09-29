@@ -76,8 +76,9 @@ class Scorpio extends Component {
   twinkle () {
     const stars = document.querySelectorAll('.star');
     stars.forEach(val => {
-      val.style.animationDuration = `${Math.random() + 2}s`;
-      val.style.animationTimingfunction = 'ease-out';
+      // TODO: 优化星星闪动动画
+      val.style.animationDuration = `${Math.random() + 3}s`;
+      val.style.animationTimingfunction = 'ease';
       val.style.animationIterationCount = 'infinite';
     })
   }
